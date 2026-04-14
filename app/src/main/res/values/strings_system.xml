@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- System Feature -->
+    <string name="system">System</string>
+    <string name="system_search_hint">Search in System&#8230;</string>
+    <string name="system_overview">System Overview</string>
+    <string name="system_internet_status">Internet Status</string>
+    <string name="system_no_results">No results found for \"%s\"</string>
+    <string name="system_no_results_desc">Try searching for something else</string>
+    
+    <!-- Internet Status Screen -->
+    <string name="internet_status_title">Internet Status</string>
+    <string name="internet_status_refresh">Refresh</string>
+    <string name="internet_status_loading">Loading internet status&#8230;</string>
+    <string name="internet_status_empty">No internet status data available</string>
+    <string name="internet_status_error">Failed to load internet status: %s</string>
+    
+    <!-- WAN Interface Details -->
+    <string name="wan_interfaces">WAN Interfaces</string>
+    <string name="wan_ip_version">IP Version</string>
+    <string name="wan_status_connected">Connected</string>
+    <string name="wan_status_disconnected">Disconnected</string>
+    <string name="wan_type">Type</string>
+    <string name="wan_ip_address">IP Address</string>
+    <string name="wan_gateway">Gateway</string>
+    <string name="wan_dns_servers">DNS Servers</string>
+    <string name="wan_mac_address">MAC Address</string>
+    <string name="tap_to_copy_details">Tap to view/copy details</string>
+
+    <!-- System Summary -->
+    <string name="system_summary_online">System Online - %d WAN Connection(s) Active</string>
+    <string name="system_summary_offline">System Offline - No Active Connections</string>
+    <string name="system_summary_unknown">System Status Unknown</string>
+
+    <!-- System Overview Card -->
+    <string name="system_overview_label">System</string>
+    <string name="status_online">Online</string>
+    <string name="status_offline">Offline</string>
+    <string name="status_checking">Checking&#8230;</string>
+    <string name="active_wan_count">%d Active WAN</string>
+    <string name="no_active_connections">No Active Connections</string>
+    <string name="checking_connections">Checking connections</string>
+    <string name="badge_connected">Connected</string>
+    <string name="badge_disconnected">Disconnected</string>
+    <string name="badge_checking">Checking</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wifi_filter_title">حظر الأجهزة</string>
+    <string name="wifi_filter_summary">التحكم في الأجهزة التي يمكنها الاتصال بشبكة Wi-Fi</string>
+    <string name="wifi_filter_24ghz">شبكة 4G</string>
+    <string name="wifi_filter_5ghz">شبكة 5G</string>
+    <string name="wifi_filter_mode">وضع التصفية</string>
+    <string name="wifi_filter_mode_off">إيقاف</string>
+    <string name="wifi_filter_mode_block">قائمة الحظر</string>
+    <string name="wifi_filter_mode_allow">قائمة السماح</string>
+    <string name="wifi_filter_list_title">الأجهزة المسجلة:</string>
+    <string name="wifi_filter_empty_list">لايوجد أجهزة مسجلة حاليا.</string>
+    <string name="wifi_filter_add_mac">إضافة عنوان MAC</string>
+    <string name="wifi_filter_enter_mac">أدخل عنوان MAC (مثال: AA:BB:CC:11:22:33)</string>
+    <string name="wifi_filter_invalid_mac">عنوان MAC غير صالح</string>
+    <string name="wifi_filter_max_reached">تم الوصول للحد الأقصى (16 عنوان)</string>
+    <string name="wifi_filter_save_changes">حفظ التغييرات</string>
+    <string name="wifi_filter_reset">إعادة تعيين</string>
+    <string name="add_to_list">إضافة للقائمة</string>
+    <string name="add_to_list_success">تمت إضافة الجهاز %1$s للقائمة</string>
+
+    <string name="wifi_filter_self_warning_title">تحذير أمان</string>
+    <string name="wifi_filter_self_warning_message">لقد اخترت وضع "قائمة السماح" ولكن هاتفك الحالي غير موجود في القائمة. إذا قمت بالحفظ، فسيتم قطع اتصالك بالراوتر ولن تتمكن من الوصول إليه مجدداً إلا عبر كابل أو جهاز آخر مسموح به.\n\nهل تريد المتابعة على أي حال؟</string>
+    <string name="wifi_filter_confirm_save">حفظ على أي حال</string>
+    <string name="wifi_filter_add_self">إضافة هاتفي للقائمة أولاً</string>
+    <string name="mac_already_exists">هذا الجهاز موجود بالفعل في القائمة</string>
+    <string name="wifi_filter_saved_label">محفوظ</string>
+    <string name="wifi_filter_draft_label">مسودة</string>
+
+    <string name="wifi_filter_block_desc">سيتم منع الأجهزة الموجودة في القائمة من الاتصال.</string>
+    <string name="wifi_filter_allow_desc">سيتم السماح فقط للأجهزة الموجودة في القائمة بالاتصال. سيتم حظر أي جهاز آخر.</string>
+    <string name="router_settings">إعدادات الراوتر</string>
+
+    <string name="wifi_filter_pending_changes">يرجى حفظ التغييرات الحالية أو إلغاؤها قبل إضافة جهاز آخر.</string>
+    <string name="delete_confirmation_title">تأكيد الحذف</string>
+    <string name="delete_confirmation_message">هل أنت متأكد أنك تريد حذف هذا الجهاز من القائمة؟ سيتم تنفيذ الحذف فعلياً بعد الضغط على "حفظ التغييرات".</string>
+</resources>

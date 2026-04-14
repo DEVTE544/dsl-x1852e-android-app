@@ -1,0 +1,11 @@
+<resources>
+    <string name="network_disconnected">Network connection lost</string>
+    <string name="network_restored">Network connection restored</string>
+    <string name="network_recovery_title">Network Interruption</string>
+    <string name="network_recovery_desc">Waiting for network to reconnect. This often happens after applying router changes.</string>
+    <string name="reconnecting">Reconnecting…</string>
+    <string name="blocking">Blocking device…</string>
+    <string name="unblocking">Unblocking device…</string>
+    <string name="saving_settings">Saving settings…</string>
+    <string name="network_recovery_timeout">Failed to restore connection within timeout.</string>
+</resources>

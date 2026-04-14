@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_settings">إعدادات التطبيق</string>
+    <string name="auto_refresh">التحديث التلقائي</string>
+    <string name="enable_auto_refresh">تفعيل التحديث التلقائي</string>
+    <string name="auto_refresh_summary">تحديث قائمة الأجهزة دورياً</string>
+    <string name="refresh_interval">مدة التحديث</string>
+    <string name="seconds_unit">%d ث</string>
+
+    <string name="data_management">إدارة البيانات</string>
+    <string name="clear_device_data">مسح بيانات الأجهزة المحلية</string>
+    <string name="clear_device_data_summary">حذف الأسماء المخصصة والملاحظات المحفوظة</string>
+    <string name="clear_device_data_confirmation">سيتم حذف جميع الأسماء المخصصة وأنواع الأجهزة والملاحظات المحفوظة محليًا. لا يمكن التراجع عن هذه العملية.</string>
+
+    <string name="clear_logs">مسح السجل</string>
+    <string name="clear_logs_summary">سيتم حذف جميع سجلات العمليات الحالية</string>
+
+    <string name="about_app">حول التطبيق</string>
+    <string name="app_version">إصدار التطبيق</string>
+    <string name="check_for_updates">التحقق من وجود تحديثات</string>
+    <string name="checking_updates">جاري التحقق من وجود تحديثات&#8230;</string>
+    <string name="update_available">تحديث متاح (%s)</string>
+    <string name="update_not_available">تطبيقك محدث بالكامل</string>
+    <string name="download_update">تنزيل التحديث</string>
+    <string name="update_error">فشل التحقق من وجود تحديثات</string>
+
+    <string name="app_language">لغة التطبيق</string>
+    <string name="language_auto">تلقائي (لغة النظام)</string>
+    <string name="logout">تسجيل الخروج</string>
+</resources>

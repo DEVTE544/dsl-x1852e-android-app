@@ -1,0 +1,14 @@
+<resources>
+    <string name="login_to_router">Login</string>
+    <string name="router_ip">Router IP</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <!-- Router Info Section -->
+    <string name="router_found">Router Found!</string>
+    <string name="router_model">Model</string>
+    <string name="router_firmware">Firmware</string>
+    <string name="router_detecting">Router info: Detecting&#8230;</string>
+    <string name="router_not_reachable">Router not reachable</string>
+    <string name="remember_me">Remember login data</string>
+</resources>

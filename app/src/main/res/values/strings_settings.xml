@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_settings">App Settings</string>
+    <string name="auto_refresh">Auto Refresh</string>
+    <string name="enable_auto_refresh">Enable Auto Refresh</string>
+    <string name="auto_refresh_summary">Automatically refresh device list periodically</string>
+    <string name="refresh_interval">Refresh Interval</string>
+    <string name="seconds_unit">%d s</string>
+
+    <string name="data_management">Data Management</string>
+    <string name="clear_device_data">Clear Local Device Data</string>
+    <string name="clear_device_data_summary">Delete custom names and saved notes</string>
+    <string name="clear_device_data_confirmation">This will delete all custom names, device types, and notes saved locally. This action cannot be undone.</string>
+
+    <string name="clear_logs">Clear Logs</string>
+    <string name="clear_logs_summary">All current operation logs will be deleted</string>
+
+    <string name="about_app">About App</string>
+    <string name="app_version">App Version</string>
+    <string name="check_for_updates">Check for Updates</string>
+    <string name="checking_updates">Checking for updates&#8230;</string>
+    <string name="update_available">Update Available (%s)</string>
+    <string name="update_not_available">Your app is up to date</string>
+    <string name="download_update">Download Update</string>
+    <string name="update_error">Failed to check for updates</string>
+
+    <string name="app_language">App Language</string>
+    <string name="language_auto">System Default</string>
+    <string name="logout">Logout</string>
+</resources>

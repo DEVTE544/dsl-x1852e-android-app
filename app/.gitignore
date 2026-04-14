@@ -1,0 +1,46 @@
+# [Android & Kotlin]
+.gradle/
+build/
+/*/build/
+.kotlin/
+.windsurf/
+
+# [Local Configuration]
+local.properties
+gradle.properties
+
+# [Signing & Keys]
+*.jks
+*.keystore
+keystore.propertiesgoogle-services.json
+
+# [Android Studio & IDEs]
+.idea/
+*.iml
+*.ipr
+*.iws
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# [Output Artifacts]
+*.apk
+*.aab
+*.zip
+*.rar
+*.7z
+*.md
+*.tar.gz
+output.json
+
+# [OS & Temp Files]
+.DS_Store
+Thumbs.db
+temp.xml
+*.log
+
+# [Gradle Wrapper]
+# We recommend keeping the wrapper for consistent builds,
+# but ignoring the binary jar is optional.
+# !gradle/wrapper/gradle-wrapper.jar

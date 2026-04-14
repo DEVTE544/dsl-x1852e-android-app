@@ -1,0 +1,14 @@
+<resources>
+    <string name="login_to_router">تسجيل الدخول</string>
+    <string name="router_ip">عنوان IP للراوتر</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">تسجيل الدخول</string>
+    <!-- Router Info Section -->
+    <string name="router_found">تم العثور على الراوتر!</string>
+    <string name="router_model">الموديل</string>
+    <string name="router_firmware">النسخة البرمجية</string>
+    <string name="router_detecting">معلومات الراوتر: جاري الكشف&#8230;</string>
+    <string name="router_not_reachable">الراوتر غير متاح</string>
+    <string name="remember_me">تذكر بيانات الدخول</string>
+</resources>

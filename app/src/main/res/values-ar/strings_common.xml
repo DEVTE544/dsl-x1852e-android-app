@@ -1,0 +1,16 @@
+<resources>
+    <string name="save">حفظ</string>
+    <string name="add">إضافة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="close">إغلاق</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="delete">حذف</string>
+    <string name="copy">نسخ</string>
+    <string name="settings">الإعدادات</string>
+    <string name="back">رجوع</string>
+    <string name="loading">جاري التحميل…</string>
+    <string name="success">تم بنجاح</string>
+    <string name="error">خطأ</string>
+    <string name="error_generic">حدث خطأ ما، يرجى المحاولة مرة أخرى.</string>
+    <string name="refresh">تحديث</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="network_disconnected">انقطع الاتصال بالشبكة</string>
+    <string name="network_restored">تم استعادة الاتصال بالشبكة</string>
+    <string name="network_recovery_title">انقطاع مؤقت في الشبكة</string>
+    <string name="network_recovery_desc">يتم انتظار عودة الاتصال. قد يحدث هذا بعد تطبيق تغييرات على الراوتر.</string>
+    <string name="reconnecting">جارٍ إعادة الاتصال…</string>
+    <string name="blocking">جارٍ حظر الجهاز…</string>
+    <string name="unblocking">جارٍ فك الحظر…</string>
+    <string name="saving_settings">جارٍ حفظ الإعدادات…</string>
+    <string name="network_recovery_timeout">تعذر استعادة الاتصال خلال المهلة المحددة.</string>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="logs">سجلات العمليات</string>
+    <string name="export_logs">تصدير السجل</string>
+    <string name="no_logs">لا توجد سجلات</string>
+    <string name="filter_all">الكل</string>
+    <string name="filter_login">دخول</string>
+    <string name="filter_refresh">تحديث</string>
+    <string name="filter_blocking">حظر/فك حظر</string>
+    <string name="filter_system">النظام</string>
+    <string name="filter_errors">أخطاء</string>
+
+    <string name="log_type_block">حظر</string>
+    <string name="log_type_unblock">فك حظر</string>
+    <string name="log_type_update_meta">تحديث بيانات</string>
+    <string name="log_type_system">النظام</string>
+    <string name="log_type_info">معلومات</string>
+</resources>

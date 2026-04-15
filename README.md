@@ -4,9 +4,6 @@
   <h1>D-Link Mobily Management</h1>
 
   <p>
-    <a href="https://opensource.org/licenses/Apache-2.0">
-      <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License" />
-    </a>
     <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white" alt="Platform" />
     <img src="https://img.shields.io/badge/Min%20Android-7.0%20(API%2024)-brightgreen" alt="Min Android" />
     <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?logo=kotlin&logoColor=white" alt="Language" />

@@ -158,6 +158,10 @@ This keeps release downloads predictable and makes the update flow easier to mai
 
 Contributions, bug reports, and compatibility findings are welcome.
 
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting changes.
+
+For substantial code contributions, the maintainer may require agreement to the project [CLA](./CLA.md).
+
 ## Screenshots
 
 <p align="center">
@@ -175,10 +179,11 @@ Contributions, bug reports, and compatibility findings are welcome.
 
 ## License
 
-This project is licensed under the **Apache License 2.0**.
+This project is distributed under a custom personal / non-commercial license.
+
+Commercial use requires prior written permission from DEVTE.
 
 See the [LICENSE](./LICENSE) file for details.
-
 
 ## Disclaimer
 

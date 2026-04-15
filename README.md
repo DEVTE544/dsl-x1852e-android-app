@@ -48,18 +48,53 @@ This project was created to solve that problem for the **D-Link DSL-X1852E**, es
 
 These are the firmware versions that are supported or have been successfully tested.
 
-| Model | Firmware / Variant | Status | Notes |
-|---|---|---|---|
-| DSL-X1852E | MOB_1.01b04 | Supported | Primary tested target |
+<table align="center">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Firmware / Variant</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DSL-X1852E</td>
+      <td>MOB_1.01b04</td>
+      <td>Supported</td>
+      <td>Primary tested target</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Supported Languages
 
-Languages ​​supported by the application; more languages ​​will be added as needed.
+Languages supported by the application; more languages will be added as needed.
 
-| Language | Code | Status | Notes |
-|---|---|---|---|
-| Arabic | ar | Supported | In-app language switching available |
-| English | en | Supported | In-app language switching available |
+<table align="center">
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Code</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Arabic</td>
+      <td>ar</td>
+      <td>Supported</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>English</td>
+      <td>en</td>
+      <td>Supported</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Current Scope
 
@@ -189,5 +224,6 @@ This is an unofficial management application for supported router models.
 Use it carefully and at your own risk, especially when changing router settings, filters, or network-related configuration.
 
 ---
-
-Made with love by DEVTE
+<div align="center">
+Made with love by DEVTE ❤️
+</div>

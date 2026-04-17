@@ -195,8 +195,8 @@ class MainViewModel(
                     delay(500)
                     
                     // Reload both bands to be safe, or at least the current one
-                    loadWifiFilter(com.example.d_linkmobilymanagement.data.model.WifiBand.BAND_2_4GHZ)
-                    loadWifiFilter(com.example.d_linkmobilymanagement.data.model.WifiBand.BAND_5GHZ)
+                    loadWifiFilter(WifiBand.BAND_2_4GHZ)
+                    loadWifiFilter(WifiBand.BAND_5GHZ)
                 }
             }
         }
@@ -292,7 +292,14 @@ class MainViewModel(
 
     fun updateRefreshInterval(seconds: Int) {
         settingsViewModel.updateRefreshInterval(seconds)
-        logsViewModel.addLog(LogType.REFRESH, R.string.refresh_interval_changed, args = arrayOf(seconds), isSuccess = true)
+        logsViewModel.addLog(
+            type = LogType.REFRESH,
+            messageRes = R.plurals.refresh_interval_changed,
+            args = arrayOf(seconds),
+            isSuccess = true,
+            isPlural = true,
+            pluralQuantity = seconds
+        )
     }
 
     fun clearAllDeviceMeta() {

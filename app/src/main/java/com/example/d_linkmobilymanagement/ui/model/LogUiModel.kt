@@ -8,7 +8,9 @@ data class LogUiModel(
     val type: LogType,
     val messageRes: Int,
     val messageArgs: List<Any>? = null,
-    val isSuccess: Boolean = true
+    val isSuccess: Boolean = true,
+    val isPlural: Boolean = false,
+    val pluralQuantity: Int = 0
 )
 
 enum class LogType {

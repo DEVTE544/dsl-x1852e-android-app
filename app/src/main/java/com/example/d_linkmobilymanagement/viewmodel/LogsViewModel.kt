@@ -24,14 +24,23 @@ class LogsViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(LogsUiState())
     val uiState: StateFlow<LogsUiState> = _uiState.asStateFlow()
 
-    fun addLog(type: LogType, messageRes: Int, isSuccess: Boolean = true, args: Array<Any>? = null) {
+    fun addLog(
+        type: LogType,
+        messageRes: Int,
+        isSuccess: Boolean = true,
+        args: Array<Any>? = null,
+        isPlural: Boolean = false,
+        pluralQuantity: Int = 0
+    ) {
         val newLog = LogUiModel(
             id = UUID.randomUUID().toString(),
             timestamp = Date(),
             type = type,
             messageRes = messageRes,
             messageArgs = args?.toList(),
-            isSuccess = isSuccess
+            isSuccess = isSuccess,
+            isPlural = isPlural,
+            pluralQuantity = pluralQuantity
         )
         _uiState.update {
             it.copy(logs = (listOf(newLog) + it.logs).take(100))

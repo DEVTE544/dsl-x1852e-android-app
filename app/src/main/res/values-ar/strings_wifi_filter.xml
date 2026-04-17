@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="wifi_filter_title">حظر الأجهزة</string>
-    <string name="wifi_filter_summary">التحكم في الأجهزة التي يمكنها الاتصال بشبكة Wi-Fi</string>
     <string name="wifi_filter_24ghz">شبكة 4G</string>
     <string name="wifi_filter_5ghz">شبكة 5G</string>
     <string name="wifi_filter_mode">وضع التصفية</string>
-    <string name="wifi_filter_mode_off">إيقاف</string>
     <string name="wifi_filter_mode_block">قائمة الحظر</string>
     <string name="wifi_filter_mode_allow">قائمة السماح</string>
     <string name="wifi_filter_list_title">الأجهزة المسجلة:</string>
     <string name="wifi_filter_empty_list">لايوجد أجهزة مسجلة حاليا.</string>
     <string name="wifi_filter_add_mac">إضافة عنوان MAC</string>
-    <string name="wifi_filter_enter_mac">أدخل عنوان MAC (مثال: AA:BB:CC:11:22:33)</string>
     <string name="wifi_filter_invalid_mac">عنوان MAC غير صالح</string>
     <string name="wifi_filter_max_reached">تم الوصول للحد الأقصى (16 عنوان)</string>
     <string name="wifi_filter_save_changes">حفظ التغييرات</string>

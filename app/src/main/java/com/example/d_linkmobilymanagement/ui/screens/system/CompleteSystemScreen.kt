@@ -10,11 +10,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.d_linkmobilymanagement.R
@@ -31,26 +32,26 @@ fun CompleteSystemScreen(
     viewModel: SafeSystemViewModel
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
-    val context = LocalContext.current
+    val resources = LocalResources.current
     
     // Localized filtering logic with Keyword Support
-    val filteredMenuItems = remember(uiState.menuItems, uiState.searchQuery, context) {
+    val filteredMenuItems = remember(uiState.menuItems, uiState.searchQuery, resources) {
         val query = uiState.searchQuery.normalizeForSearch()
         uiState.menuItems.filter { item ->
             if (query.isBlank()) return@filter true
 
             // 1. Check Title
-            val title = context.getString(item.titleResId).normalizeForSearch()
+            val title = resources.getString(item.titleResId).normalizeForSearch()
             if (title.contains(query)) return@filter true
 
             // 2. Check Related Keywords (Content Strings)
             val hasMatchingKeyword = item.relatedKeywordsResIds.any { resId ->
-                context.getString(resId).normalizeForSearch().contains(query)
+                resources.getString(resId).normalizeForSearch().contains(query)
             }
             
             hasMatchingKeyword
         }.map { item ->
-            item to context.getString(item.titleResId)
+            item to resources.getString(item.titleResId)
         }
     }
 
@@ -65,66 +66,72 @@ fun CompleteSystemScreen(
             onRefreshClick = { viewModel.refreshSystemData() }
         )
         
-        Column(
+        LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(horizontal = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+            contentPadding = PaddingValues(bottom = paddingValues.calculateBottomPadding() + 16.dp)
         ) {
-            Spacer(modifier = Modifier.height(8.dp))
+            item { Spacer(modifier = Modifier.height(8.dp)) }
 
             // System Summary Card
-            SystemOverviewCard(
-                isLoading = uiState.isLoading,
-                activeWanCount = uiState.activeWanCount
-            )
+            item {
+                SystemOverviewCard(
+                    isLoading = uiState.isLoading,
+                    activeWanCount = uiState.activeWanCount
+                )
+            }
 
             // Modern Search Bar
-            SystemSearchBar(
-                query = uiState.searchQuery,
-                onQueryChange = { viewModel.onEvent(SafeSystemUiEvent.OnSearchQueryChanged(it)) },
-                onClearClick = { viewModel.onEvent(SafeSystemUiEvent.OnSearchQueryChanged("")) }
-            )
+            item {
+                SystemSearchBar(
+                    query = uiState.searchQuery,
+                    onQueryChange = { viewModel.onEvent(SafeSystemUiEvent.OnSearchQueryChanged(it)) },
+                    onClearClick = { viewModel.onEvent(SafeSystemUiEvent.OnSearchQueryChanged("")) }
+                )
+            }
 
             // Features List
-            Text(
-                text = stringResource(R.string.system_internet_status),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold
-            )
+            item {
+                Text(
+                    text = stringResource(R.string.system_internet_status),
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+            }
 
-            Box(modifier = Modifier.weight(1f)) {
-                if (filteredMenuItems.isNotEmpty()) {
-                    LazyColumn(
-                        verticalArrangement = Arrangement.spacedBy(12.dp),
-                        contentPadding = PaddingValues(bottom = paddingValues.calculateBottomPadding() + 16.dp)
-                    ) {
-                        items(filteredMenuItems) { (item, localizedTitle) ->
-                            SystemMenuButton(
-                                item = item,
-                                title = localizedTitle,
-                                onClick = {
-                                    if (item.route == "internet_status") {
-                                        onNavigateToInternetStatus()
-                                    }
-                                }
-                            )
+            if (filteredMenuItems.isNotEmpty()) {
+                items(filteredMenuItems) { (item, localizedTitle) ->
+                    SystemMenuButton(
+                        item = item,
+                        title = localizedTitle,
+                        onClick = {
+                            if (item.route == "internet_status") {
+                                onNavigateToInternetStatus()
+                            }
                         }
-                    }
-                } else {
+                    )
+                }
+            } else {
+                item {
                     EmptySearchState(
                         query = uiState.searchQuery,
-                        modifier = Modifier.fillMaxSize()
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 32.dp)
                     )
                 }
             }
 
             // Error message
             uiState.errorMessage?.let { error ->
-                ErrorMessageCard(
-                    error = error,
-                    onDismiss = { viewModel.onEvent(SafeSystemUiEvent.ClearError) }
-                )
+                item {
+                    ErrorMessageCard(
+                        error = error,
+                        onDismiss = { viewModel.onEvent(SafeSystemUiEvent.ClearError) }
+                    )
+                }
             }
         }
     }
@@ -139,7 +146,9 @@ fun SystemMenuButton(
 ) {
     Button(
         onClick = onClick,
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = 56.dp), // Rule 7.1
         shape = RoundedCornerShape(12.dp),
         contentPadding = PaddingValues(16.dp),
         colors = ButtonDefaults.buttonColors(
@@ -153,7 +162,7 @@ fun SystemMenuButton(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Row(
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.weight(1f), // Rule 7.2
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
@@ -167,7 +176,9 @@ fun SystemMenuButton(
                     text = title,
                     style = MaterialTheme.typography.bodyLarge,
                     fontWeight = FontWeight.Medium,
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1f), // Rule 7.2
+                    maxLines = 2, // Rule 7.4
+                    overflow = TextOverflow.Ellipsis
                 )
             }
             Icon(
@@ -200,7 +211,9 @@ fun EmptySearchState(
             text = stringResource(R.string.system_no_results, query),
             style = MaterialTheme.typography.titleMedium,
             color = MaterialTheme.colorScheme.onSurface,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            maxLines = 2, // Rule 7.4
+            overflow = TextOverflow.Ellipsis
         )
         Text(
             text = stringResource(R.string.system_no_results_desc),
@@ -230,7 +243,9 @@ fun ErrorMessageCard(
                 text = stringResource(R.string.error_unknown),
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.error,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                maxLines = 1, // Rule 7.4
+                overflow = TextOverflow.Ellipsis
             )
             Text(
                 text = error,

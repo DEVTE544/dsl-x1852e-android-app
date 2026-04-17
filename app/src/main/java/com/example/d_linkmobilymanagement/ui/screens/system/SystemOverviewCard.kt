@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -110,7 +111,7 @@ fun SystemOverviewCard(
                     
                     Text(
                         text = when (targetStatus) {
-                            SystemStatus.ONLINE -> stringResource(R.string.active_wan_count, activeWanCount)
+                            SystemStatus.ONLINE -> pluralStringResource(R.plurals.active_wan_count, activeWanCount, activeWanCount)
                             SystemStatus.OFFLINE -> stringResource(R.string.no_active_connections)
                             SystemStatus.CHECKING -> stringResource(R.string.checking_connections)
                         },

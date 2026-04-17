@@ -18,7 +18,7 @@ class UpdateRepository(
                 val release = response.body()
                 if (release != null) {
                     val latestTag = release.tagName
-                    val isUpdateAvailable = isVersionNewer(AppConfig.VERSION_NAME, latestTag)
+                    val isUpdateAvailable = isVersionNewer(latestTag)
                     
                     val apkAsset = release.assets.find { it.name == AppConfig.APK_NAME }
                     val downloadUrl = apkAsset?.downloadUrl ?: AppConfig.LATEST_RELEASE_DOWNLOAD_URL
@@ -54,8 +54,8 @@ class UpdateRepository(
     /**
      * منطق مقارنة الإصدارات (يدعم تنسيق v1.0.0 أو 1.0.0)
      */
-    private fun isVersionNewer(currentVersion: String, remoteTag: String): Boolean {
-        val current = currentVersion.removePrefix("v").split(".").mapNotNull { it.toIntOrNull() }
+    private fun isVersionNewer(remoteTag: String): Boolean {
+        val current = AppConfig.VERSION_NAME.removePrefix("v").split(".").mapNotNull { it.toIntOrNull() }
         val remote = remoteTag.removePrefix("v").split(".").mapNotNull { it.toIntOrNull() }
 
         val size = maxOf(current.size, remote.size)

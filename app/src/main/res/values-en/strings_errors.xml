@@ -2,24 +2,19 @@
     <string name="error_router_unreachable">Unable to connect to the router. Make sure you are connected to the correct network.</string>
     <string name="error_timeout">Connection timeout. The router is slow or unreachable.</string>
     <string name="error_session_expired">Session expired. Please login again.</string>
-    <string name="error_session_key_fail">Failed to get session key. Try logging in again.</string>
     <string name="error_wrong_password">Incorrect username or password.</string>
     <string name="error_unknown">An unexpected error occurred.</string>
-    <string name="error_block_fail">Failed to block/unblock device.</string>
-    <string name="error_wifi_only">Only WiFi devices can be blocked/unblocked.</string>
-    <string name="error_list_full">Block list is full.</string>
-
     <string name="login_success">Login successful</string>
     <string name="login_fail">Login failed</string>
     <string name="devices_updated">Devices list updated</string>
-    <string name="unblock_success">Device unblocked successfully</string>
-    <string name="block_success">Device blocked successfully</string>
     <string name="save_settings_success">Settings saved successfully</string>
-    <string name="save_settings_fail">Failed to save settings</string>
     <string name="clear_meta_success">Local device data cleared successfully</string>
     <string name="clear_meta_fail">Failed to clear device data</string>
     <string name="auto_refresh_enabled">Auto refresh enabled</string>
     <string name="auto_refresh_disabled">Auto refresh disabled</string>
-    <string name="refresh_interval_changed">Refresh interval changed to %d seconds</string>
+    <plurals name="refresh_interval_changed">
+        <item quantity="one">Refresh interval changed to %d second</item>
+        <item quantity="other">Refresh interval changed to %d seconds</item>
+    </plurals>
     <string name="update_device_meta_success">Device settings for %s updated</string>
 </resources>

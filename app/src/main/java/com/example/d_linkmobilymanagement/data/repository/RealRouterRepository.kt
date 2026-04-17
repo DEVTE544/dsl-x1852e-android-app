@@ -199,8 +199,7 @@ class RealRouterRepository(
                 mode5 = mapToWifiFilterMode(wifiData.mode5),
                 slots24 = newSlots24,
                 slots5 = slots5,
-                saveBand = "24",
-                selectedMac = mac
+                saveBand = "24"
             )
             httpClient.submitWifiFilter(routerIp, payload)
             return
@@ -219,8 +218,7 @@ class RealRouterRepository(
             mode5 = mapToWifiFilterMode(wifiData.mode5),
             slots24 = slots24,
             slots5 = newSlots5,
-            saveBand = "5",
-            selectedMac = mac
+            saveBand = "5"
         )
         httpClient.submitWifiFilter(routerIp, payload)
     }
@@ -604,9 +602,7 @@ class RealRouterRepository(
         mode5: WifiFilterMode,
         slots24: List<String>,
         slots5: List<String>,
-        saveBand: String,
-        selectedMac: String = "",
-        manualMode: Boolean = false
+        saveBand: String
     ): List<Pair<String, String>> {
         val safe24 = ensureSlotPayload(slots24)
         val safe5 = ensureSlotPayload(slots5)

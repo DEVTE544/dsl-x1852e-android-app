@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="wifi_filter_title">Device Blocking</string>
-    <string name="wifi_filter_summary">Control which devices can connect to Wi-Fi</string>
+
     <string name="wifi_filter_24ghz">2.4GHz Network</string>
     <string name="wifi_filter_5ghz">5GHz Network</string>
     <string name="wifi_filter_mode">Filtering Mode</string>
-    <string name="wifi_filter_mode_off">Off</string>
+
     <string name="wifi_filter_mode_block">Blacklist</string>
     <string name="wifi_filter_mode_allow">Whitelist</string>
     <string name="wifi_filter_list_title">Registered Devices:</string>
     <string name="wifi_filter_empty_list">No devices currently registered.</string>
     <string name="wifi_filter_add_mac">Add MAC Address</string>
-    <string name="wifi_filter_enter_mac">Enter MAC Address (e.g., AA:BB:CC:11:22:33)</string>
+
     <string name="wifi_filter_invalid_mac">Invalid MAC Address</string>
     <string name="wifi_filter_max_reached">Limit reached (Max 16 addresses)</string>
     <string name="wifi_filter_save_changes">Save Changes</string>

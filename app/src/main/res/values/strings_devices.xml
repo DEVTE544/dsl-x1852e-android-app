@@ -1,26 +1,15 @@
 <resources>
     <string name="connected_devices">Connected Devices</string>
-    <string name="blocked_devices">Blocked Devices</string>
     <string name="connected_now">Connected Now</string>
-    <string name="blocked_label">Blocked</string>
-    <string name="active_devices_count">%d active devices now</string>
-    <string name="blocked_devices_count">%d blocked devices</string>
-    <string name="block_device">Block Device</string>
-    <string name="unblock_device">Unblock Device</string>
+    <plurals name="active_devices_count">
+        <item quantity="one">%d active device now</item>
+        <item quantity="other">%d active devices now</item>
+    </plurals>
     <string name="device_name">Device Name</string>
-    <string name="network_type">Network Type</string>
-    <string name="ip_address">IP Address</string>
-    <string name="mac_address">MAC Address</string>
-    <string name="last_seen">Last Seen</string>
-    <string name="edit_device">Edit Device</string>
     <string name="custom_name">Custom Name (Optional)</string>
     <string name="device_type_note">Device Type/Note</string>
 
     <string name="no_connected_devices">No devices connected at the moment</string>
-    <string name="no_blocked_devices">No devices in the block list</string>
-    <string name="block">Block</string>
-    <string name="unblock">Unblock</string>
-    <string name="block_list_empty">Block list is empty</string>
     <string name="basic_device_info">Basic Device Information</string>
     <string name="current_name">Current Name: %s</string>
     <string name="save_changes">Save Changes</string>
@@ -37,10 +26,7 @@
     <string name="device_type_label">Device Type:</string>
     <string name="copy_all_info">Copy all information</string>
     <string name="this_device">This Device</string>
-    <string name="self_device_warning_title">Warning: This is your current device</string>
-    <string name="self_device_warning_desc">It looks like this is the device you are currently using. Blocking it may disconnect you immediately.</string>
     <string name="device_details">Device Details</string>
-    <string name="confirm_block_anyway">Proceed Anyway</string>
     <string name="device_search_list">Search on devices&#8230;</string>
     <string name="filter_devices">Filter Devices</string>
     <string name="filter_online">Connected Now</string>

@@ -12,6 +12,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.d_linkmobilymanagement.R
@@ -152,8 +153,20 @@ fun LogItem(log: LogUiModel) {
                     style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.secondary
                 )
+                val message = if (log.isPlural) {
+                    pluralStringResource(
+                        log.messageRes,
+                        log.pluralQuantity,
+                        *(log.messageArgs?.toTypedArray() ?: emptyArray())
+                    )
+                } else {
+                    stringResource(
+                        log.messageRes,
+                        *(log.messageArgs?.toTypedArray() ?: emptyArray())
+                    )
+                }
                 Text(
-                    text = stringResource(log.messageRes, *(log.messageArgs?.toTypedArray() ?: emptyArray())),
+                    text = message,
                     style = MaterialTheme.typography.bodyMedium,
                     color = color
                 )

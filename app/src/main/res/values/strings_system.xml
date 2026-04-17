@@ -11,9 +11,9 @@
     <!-- Internet Status Screen -->
     <string name="internet_status_title">Internet Status</string>
     <string name="internet_status_refresh">Refresh</string>
-    <string name="internet_status_loading">Loading internet status&#8230;</string>
+
     <string name="internet_status_empty">No internet status data available</string>
-    <string name="internet_status_error">Failed to load internet status: %s</string>
+
     
     <!-- WAN Interface Details -->
     <string name="wan_interfaces">WAN Interfaces</string>
@@ -28,16 +28,19 @@
     <string name="tap_to_copy_details">Tap to view/copy details</string>
 
     <!-- System Summary -->
-    <string name="system_summary_online">System Online - %d WAN Connection(s) Active</string>
-    <string name="system_summary_offline">System Offline - No Active Connections</string>
-    <string name="system_summary_unknown">System Status Unknown</string>
+
+
+
 
     <!-- System Overview Card -->
     <string name="system_overview_label">System</string>
     <string name="status_online">Online</string>
     <string name="status_offline">Offline</string>
     <string name="status_checking">Checking&#8230;</string>
-    <string name="active_wan_count">%d Active WAN</string>
+    <plurals name="active_wan_count">
+        <item quantity="one">%d Active WAN</item>
+        <item quantity="other">%d Active WANs</item>
+    </plurals>
     <string name="no_active_connections">No Active Connections</string>
     <string name="checking_connections">Checking connections</string>
     <string name="badge_connected">Connected</string>

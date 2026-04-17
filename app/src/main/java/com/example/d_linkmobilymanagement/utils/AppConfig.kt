@@ -7,7 +7,7 @@ object AppConfig {
     /**
      * رقم إصدار التطبيق الأساسي
      */
-    const val VERSION_NAME = "1.15.1"
+    const val VERSION_NAME = "1.15.3"
     
     /**
      * نص الإصدار الكامل الذي يظهر للمستخدم في واجهة الإعدادات

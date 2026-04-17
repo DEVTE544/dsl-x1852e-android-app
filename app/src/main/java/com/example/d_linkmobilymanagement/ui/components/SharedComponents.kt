@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -93,7 +94,7 @@ fun DeviceSummaryCard(
     titleRes: Int = R.string.connected_devices,
     icon: ImageVector = Icons.Outlined.Devices,
     badgeTextRes: Int? = null,
-    countTextRes: Int = R.string.active_devices_count,
+    countTextRes: Int = R.plurals.active_devices_count,
     emptyTextRes: Int = R.string.no_connected_devices
 ) {
     val containerColor by animateColorAsState(
@@ -153,7 +154,7 @@ fun DeviceSummaryCard(
                 
                 Text(
                     text = if (onlineCount > 0) 
-                        stringResource(countTextRes, onlineCount)
+                        pluralStringResource(countTextRes, onlineCount, onlineCount)
                     else 
                         stringResource(emptyTextRes),
                     style = MaterialTheme.typography.bodyMedium,

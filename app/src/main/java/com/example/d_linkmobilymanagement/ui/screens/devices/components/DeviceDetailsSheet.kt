@@ -12,10 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.d_linkmobilymanagement.R
@@ -29,8 +30,9 @@ fun DeviceDetailsSheet(
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val clipboardManager = LocalClipboardManager.current
+    val clipboardManager = LocalClipboard.current
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
@@ -175,8 +177,10 @@ fun DeviceDetailsSheet(
                         appendLine("IP: ${device.ip}")
                         if (device.deviceTypeNote.isNotBlank()) appendLine("${labelDeviceType}: ${device.deviceTypeNote}")
                     }
-                    clipboardManager.setText(AnnotatedString(allInfo))
-                    Toast.makeText(context, R.string.copy_all_info, Toast.LENGTH_SHORT).show()
+                    scope.launch {
+                        clipboardManager.setClipEntry(androidx.compose.ui.platform.ClipEntry(android.content.ClipData.newPlainText(null, allInfo)))
+                        Toast.makeText(context, R.string.copy_all_info, Toast.LENGTH_SHORT).show()
+                    }
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
@@ -196,8 +200,9 @@ private fun CopyableDetailRowWithIcon(
     label: String,
     value: String
 ) {
-    val clipboardManager = LocalClipboardManager.current
+    val clipboardManager = LocalClipboard.current
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
 
     Row(
         modifier = Modifier
@@ -234,8 +239,10 @@ private fun CopyableDetailRowWithIcon(
 
         IconButton(
             onClick = {
-                clipboardManager.setText(AnnotatedString(value))
-                Toast.makeText(context, R.string.copy, Toast.LENGTH_SHORT).show()
+                scope.launch {
+                    clipboardManager.setClipEntry(androidx.compose.ui.platform.ClipEntry(android.content.ClipData.newPlainText(null, value)))
+                    Toast.makeText(context, R.string.copy, Toast.LENGTH_SHORT).show()
+                }
             },
             modifier = Modifier.size(40.dp)
         ) {

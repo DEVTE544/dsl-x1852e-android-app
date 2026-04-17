@@ -12,8 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.launch
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -28,8 +30,9 @@ fun WanDetailsSheet(
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val clipboardManager = LocalClipboardManager.current
+    val clipboardManager = LocalClipboard.current
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
     
     ModalBottomSheet(
         onDismissRequest = onDismiss,
@@ -163,8 +166,10 @@ fun WanDetailsSheet(
                         appendLine("${macLabel}: ${wanInterface.mac}")
                         appendLine("${typeLabel}: ${wanInterface.typeIsp}")
                     }
-                    clipboardManager.setText(AnnotatedString(allInfo))
-                    Toast.makeText(context, R.string.copy_all_info, Toast.LENGTH_SHORT).show()
+                    scope.launch {
+                        clipboardManager.setClipEntry(androidx.compose.ui.platform.ClipEntry(android.content.ClipData.newPlainText(null, allInfo)))
+                        Toast.makeText(context, R.string.copy_all_info, Toast.LENGTH_SHORT).show()
+                    }
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
@@ -184,9 +189,10 @@ private fun CopyableDetailRowWithIcon(
     label: String,
     value: String
 ) {
-    val clipboardManager = LocalClipboardManager.current
+    val clipboardManager = LocalClipboard.current
     val context = LocalContext.current
-    
+    val scope = rememberCoroutineScope()
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -200,9 +206,9 @@ private fun CopyableDetailRowWithIcon(
             modifier = Modifier.size(24.dp),
             tint = MaterialTheme.colorScheme.primary
         )
-        
+
         Spacer(modifier = Modifier.width(12.dp))
-        
+
         Column(
             modifier = Modifier.weight(1f)
         ) {
@@ -219,11 +225,13 @@ private fun CopyableDetailRowWithIcon(
                 overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
             )
         }
-        
+
         IconButton(
             onClick = {
-                clipboardManager.setText(AnnotatedString(value))
-                Toast.makeText(context, R.string.copy, Toast.LENGTH_SHORT).show()
+                scope.launch {
+                    clipboardManager.setClipEntry(androidx.compose.ui.platform.ClipEntry(android.content.ClipData.newPlainText(null, value)))
+                    Toast.makeText(context, R.string.copy, Toast.LENGTH_SHORT).show()
+                }
             },
             modifier = Modifier.size(40.dp)
         ) {

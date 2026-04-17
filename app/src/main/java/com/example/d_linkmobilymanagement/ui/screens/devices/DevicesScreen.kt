@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.dp
 import com.example.d_linkmobilymanagement.R
 import com.example.d_linkmobilymanagement.ui.components.*
 import com.example.d_linkmobilymanagement.ui.model.DeviceUiModel
-import com.example.d_linkmobilymanagement.ui.model.NetworkType
 import com.example.d_linkmobilymanagement.ui.screens.devices.components.DeviceDetailsSheet
 import com.example.d_linkmobilymanagement.ui.screens.system.SystemSearchBar
 

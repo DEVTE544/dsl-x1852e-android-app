@@ -12,12 +12,8 @@ class DlinkApp : Application() {
         super.onCreate()
         
         // Initialize Timber for logging in debug mode
-        try {
-            if (java.lang.Boolean.parseBoolean("true")) { // Always plant in debug builds
-                Timber.plant(Timber.DebugTree())
-            }
-        } catch (_: Exception) {
-            // Ignore if BuildConfig not available
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
         }
         
         // Initialize app container

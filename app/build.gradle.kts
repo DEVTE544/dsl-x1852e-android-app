@@ -12,10 +12,16 @@ android {
         applicationId = "com.example.d_linkmobilymanagement"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 11503
+        versionName = "v1.15.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lint {
+        abortOnError = false
+        textReport = true
+        showAll = true
+        explainIssues = false
     }
 
     buildTypes {
@@ -30,6 +36,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     androidResources {
@@ -64,23 +71,23 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.extended)
 
     // Timber for logging
-    implementation("com.jakewharton.timber:timber:5.0.1")
+    implementation(libs.timber)
 
     testImplementation(libs.junit)
-    testImplementation("io.mockk:mockk:1.13.8")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
     
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.navigation.testing)
-    androidTestImplementation("io.mockk:mockk-android:1.13.8")
+    androidTestImplementation(libs.mockk.android)
 
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     implementation(libs.retrofit)
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+    implementation(libs.retrofit.converter.kotlinx)
     implementation(libs.kotlinx.serialization.json)
 }
 

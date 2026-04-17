@@ -21,9 +21,7 @@
     <string name="update_available">تحديث متاح (%s)</string>
     <string name="update_not_available">تطبيقك محدث بالكامل</string>
     <string name="download_update">تنزيل التحديث</string>
-    <string name="update_error">فشل التحقق من وجود تحديثات</string>
 
     <string name="app_language">لغة التطبيق</string>
     <string name="language_auto">تلقائي (لغة النظام)</string>
-    <string name="logout">تسجيل الخروج</string>
 </resources>

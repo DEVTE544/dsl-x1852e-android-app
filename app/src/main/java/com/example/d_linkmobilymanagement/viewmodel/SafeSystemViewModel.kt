@@ -2,6 +2,9 @@ package com.example.d_linkmobilymanagement.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.d_linkmobilymanagement.data.model.SystemMenuItem
 import com.example.d_linkmobilymanagement.data.model.WanInterfaceStatus
 import com.example.d_linkmobilymanagement.data.repository.RouterRepository
@@ -176,6 +179,17 @@ class SafeSystemViewModel(
 
     fun refreshSystemData() {
         fetchInternetStatus()
+    }
+
+    companion object {
+        fun provideFactory(
+            repository: RouterRepository?,
+            networkMonitor: NetworkMonitor?
+        ): ViewModelProvider.Factory = viewModelFactory {
+            initializer {
+                SafeSystemViewModel(repository, networkMonitor)
+            }
+        }
     }
 
 }

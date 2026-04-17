@@ -11,6 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -79,6 +80,8 @@ fun WifiFilterConfirmDeleteDialog(
 @Composable
 fun AppNavGraph(vm: MainViewModel) {
     val context = LocalContext.current
+    val resources = LocalResources.current
+    val currentResources by rememberUpdatedState(resources)
     val navController = rememberNavController()
     val uiState by vm.uiState.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -87,9 +90,17 @@ fun AppNavGraph(vm: MainViewModel) {
         vm.events.collect { event ->
             when (event) {
                 is UiEvent.ShowMessage -> {
-                    val message = event.args?.let { args ->
-                        context.getString(event.messageRes, *args.toTypedArray())
-                    } ?: context.getString(event.messageRes)
+                    val message = if (event.isPlural) {
+                        if (event.args != null) {
+                            currentResources.getQuantityString(event.messageRes, event.pluralQuantity, *event.args.toTypedArray())
+                        } else {
+                            currentResources.getQuantityString(event.messageRes, event.pluralQuantity)
+                        }
+                    } else {
+                        event.args?.let { args ->
+                            currentResources.getString(event.messageRes, *args.toTypedArray())
+                        } ?: currentResources.getString(event.messageRes)
+                    }
                     snackbarHostState.showSnackbar(message)
                 }
             }
@@ -255,7 +266,7 @@ fun AppNavGraph(vm: MainViewModel) {
             }
 
             composable(AppRoute.Settings.route) {
-                val settingsVm: com.example.d_linkmobilymanagement.viewmodel.SettingsViewModel = viewModel(
+                val settingsVm: SettingsViewModel = viewModel(
                     factory = MainViewModelFactory(
                         (LocalContext.current.applicationContext as com.example.d_linkmobilymanagement.DlinkApp).container.routerRepository,
                         (LocalContext.current.applicationContext as com.example.d_linkmobilymanagement.DlinkApp).container.updateRepository,
@@ -305,9 +316,11 @@ fun AppNavGraph(vm: MainViewModel) {
                         paddingValues = padding,
                         onNavigateToInternetStatus = { navController.navigate("internet_status") },
                         onSettingsClick = { navController.navigate(AppRoute.Settings.route) },
-                        viewModel = SafeSystemViewModel(
-                            repository = try { vm.getRepository() } catch (_: Exception) { null },
-                            networkMonitor = vm.networkMonitor
+                        viewModel = viewModel(
+                            factory = SafeSystemViewModel.provideFactory(
+                                repository = try { vm.getRepository() } catch (_: Exception) { null },
+                                networkMonitor = vm.networkMonitor
+                            )
                         )
                     )
                 }
@@ -316,9 +329,11 @@ fun AppNavGraph(vm: MainViewModel) {
                         paddingValues = padding,
                         onBackClick = { navController.popBackStack() },
                         onSettingsClick = { navController.navigate(AppRoute.Settings.route) },
-                        viewModel = SafeSystemViewModel(
-                            repository = try { vm.getRepository() } catch (_: Exception) { null },
-                            networkMonitor = vm.networkMonitor
+                        viewModel = viewModel(
+                            factory = SafeSystemViewModel.provideFactory(
+                                repository = try { vm.getRepository() } catch (_: Exception) { null },
+                                networkMonitor = vm.networkMonitor
+                            )
                         )
                     )
                 }

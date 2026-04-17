@@ -2,24 +2,23 @@
     <string name="error_router_unreachable">تعذر الاتصال بالراوتر. تأكد من أنك متصل بشبكة الراوتر الصحيحة.</string>
     <string name="error_timeout">انتهت مهلة الاتصال. الراوتر بطيء أو غير متاح.</string>
     <string name="error_session_expired">انتهت الجلسة. يرجى تسجيل الدخول مرة أخرى.</string>
-    <string name="error_session_key_fail">فشل الحصول على مفتاح الجلسة. حاول تسجيل الدخول مرة أخرى.</string>
     <string name="error_wrong_password">اسم المستخدم أو كلمة المرور غير صحيحة.</string>
     <string name="error_unknown">حدث خطأ غير متوقع.</string>
-    <string name="error_block_fail">فشلت عملية الحظر أو إزالة الحظر.</string>
-    <string name="error_wifi_only">يمكن حظر/إزالة حظر أجهزة الواي فاي فقط.</string>
-    <string name="error_list_full">قائمة الحظر ممتلئة.</string>
-
     <string name="login_success">تم تسجيل الدخول بنجاح</string>
     <string name="login_fail">فشل تسجيل الدخول</string>
     <string name="devices_updated">تم تحديث الأجهزة</string>
-    <string name="unblock_success">تمت إزالة الحظر بنجاح</string>
-    <string name="block_success">تم حظر الجهاز بنجاح</string>
     <string name="save_settings_success">تم حفظ الإعدادات بنجاح</string>
-    <string name="save_settings_fail">فشل حفظ الإعدادات</string>
     <string name="clear_meta_success">تم مسح بيانات الأجهزة المحلية بنجاح</string>
     <string name="clear_meta_fail">فشل مسح بيانات الأجهزة</string>
     <string name="auto_refresh_enabled">تم تفعيل التحديث التلقائي</string>
     <string name="auto_refresh_disabled">تم تعطيل التحديث التلقائي</string>
-    <string name="refresh_interval_changed">تم تغيير فاصل التحديث إلى %d ثوانٍ</string>
+    <plurals name="refresh_interval_changed">
+        <item quantity="zero">تم تغيير فاصل التحديث إلى %d ثانية</item>
+        <item quantity="one">تم تغيير فاصل التحديث إلى ثانية واحدة</item>
+        <item quantity="two">تم تغيير فاصل التحديث إلى ثانيتين</item>
+        <item quantity="few">تم تغيير فاصل التحديث إلى %d ثوانٍ</item>
+        <item quantity="many">تم تغيير فاصل التحديث إلى %d ثانية</item>
+        <item quantity="other">تم تغيير فاصل التحديث إلى %d ثانية</item>
+    </plurals>
     <string name="update_device_meta_success">تم تحديث إعدادات جهاز: %s</string>
 </resources>

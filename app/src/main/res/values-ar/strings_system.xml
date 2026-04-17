@@ -9,9 +9,7 @@
 
     <string name="internet_status_title">حالة الإنترنت</string>
     <string name="internet_status_refresh">تحديث</string>
-    <string name="internet_status_loading">جاري تحميل حالة الإنترنت&#8230;</string>
     <string name="internet_status_empty">لا تتوفر بيانات عن حالة الإنترنت</string>
-    <string name="internet_status_error">فشل تحميل حالة الإنترنت: %s</string>
 
     <string name="wan_interfaces">واجهات WAN</string>
     <string name="wan_ip_version">إصدار IP</string>
@@ -24,15 +22,19 @@
     <string name="wan_mac_address">عنوان MAC</string>
     <string name="tap_to_copy_details">انقر لنسخ المعلومات</string>
 
-    <string name="system_summary_online">النظام متصل - %d اتصال WAN نشط</string>
-    <string name="system_summary_offline">النظام غير متصل - لا توجد اتصالات نشطة</string>
-    <string name="system_summary_unknown">حالة النظام غير معروفة</string>
     <!-- بطاقة نظرة عامة على النظام -->
     <string name="system_overview_label">النظام</string>
     <string name="status_online">متصل</string>
     <string name="status_offline">غير متصل</string>
     <string name="status_checking">جاري التحقق&#8230;</string>
-    <string name="active_wan_count">%d WAN نشط</string>
+    <plurals name="active_wan_count">
+        <item quantity="zero">لا توجد اتصالات WAN نشطة</item>
+        <item quantity="one">اتصال WAN نشط واحد</item>
+        <item quantity="two">اتصالان WAN نشطان</item>
+        <item quantity="few">%d اتصالات WAN نشطة</item>
+        <item quantity="many">%d اتصالاً WAN نشطاً</item>
+        <item quantity="other">%d اتصال WAN نشط</item>
+    </plurals>
     <string name="no_active_connections">لا توجد اتصالات نشطة</string>
     <string name="checking_connections">جاري التحقق من الاتصالات</string>
     <string name="badge_connected">متصل</string>
